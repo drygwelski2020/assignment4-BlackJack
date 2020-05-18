@@ -5,6 +5,7 @@ namespace assignment4_BlackJack
 {
     class Program
     {
+        // Create a greeting and playing instructions
         static void DisplayGreeting()
         {
             Console.WriteLine("---------------------------------------------------------------------------------------------------");
@@ -18,7 +19,7 @@ namespace assignment4_BlackJack
             Console.WriteLine("---------------------------------------------------------------------------------------------------");
             Console.WriteLine("---------------------------------------------------------------------------------------------------");
         }
-
+        // Card class
         public class Card
         {
             public string Face { get; set; }
@@ -77,6 +78,7 @@ namespace assignment4_BlackJack
                 return cardVal;
 
             }
+
             static void Main(string[] args)
             {
 
@@ -86,6 +88,7 @@ namespace assignment4_BlackJack
 
                     DisplayGreeting();
 
+                    // Create card deck
                     var cardFace = new List<string>();
                     var cardSuit = new List<string>();
 
@@ -202,6 +205,7 @@ namespace assignment4_BlackJack
                     int playerTotal = cardDeck[0].Value() + cardDeck[1].Value();
                     int dealerTotal = cardDeck[2].Value() + cardDeck[3].Value();
 
+                    // Display player's card and begin the game
                     Console.WriteLine($"Player's first card is {playerCard1}");
                     Console.WriteLine($"Player's second card is {playerCard2}");
                     Console.WriteLine($"Current total for player is {playerTotal}");
@@ -232,6 +236,8 @@ namespace assignment4_BlackJack
                             break;
                         }
                     }
+
+                    // Start dealer's hand
                     if (playerTotal < 21)
                     {
                         Console.WriteLine("                                           ");
@@ -260,6 +266,7 @@ namespace assignment4_BlackJack
                         }
                     }
 
+                    // Display game results
                     if (playerTotal <= 20 && dealerTotal <= 20)
                     {
                         if (playerTotal > dealerTotal)
@@ -276,6 +283,7 @@ namespace assignment4_BlackJack
                         }
                     }
 
+                    // Ask the player if they wish to play again
                     Console.WriteLine("                            ");
                     Console.Write("Play again? Answer 'Y' or 'N' : ");
                     playAgain = Console.ReadLine();
