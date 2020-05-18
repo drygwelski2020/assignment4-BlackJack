@@ -211,7 +211,7 @@ namespace assignment4_BlackJack
                     Console.WriteLine($"Current total for player is {playerTotal}");
                     Console.WriteLine("                                          ");
 
-                    while (playerTotal <= 16)
+                    while (playerTotal < 21)
                     {
                         Console.Write("Type 'H' to hit or 'S' to stand ");
                         string answer = Console.ReadLine();
